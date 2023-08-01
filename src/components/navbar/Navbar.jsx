@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 const links = [
   {
@@ -39,11 +42,13 @@ const Navbar = () => {
     <div className="flex flex-row justify-between p-4">
       <Link href="/">Lama</Link>
       <div>
+        <DarkModeToggle />
         {links.map((link) => (
           <Link key={link.id} href={link.url} className="px-2">
             {link.title}
           </Link>
         ))}
+        <button onClick={() => console.log("logged out")}>Logout</button>
       </div>
     </div>
   );
